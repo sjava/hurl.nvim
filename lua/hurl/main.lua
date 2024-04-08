@@ -207,7 +207,7 @@ local function execute_hurl_cmd(opts, callback)
     end
   end
 
-  local cmd = vim.list_extend({ 'hurl', '-i', '--no-color' }, opts)
+  local cmd = vim.list_extend({ 'hurl', '-i', '--no-color', '--file-root', git.get_git_root() }, opts)
   response = {}
 
   utils.log_info('hurl: running command' .. vim.inspect(cmd))
